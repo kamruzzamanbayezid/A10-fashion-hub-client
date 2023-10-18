@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 const AddProducts = () => {
 
@@ -23,6 +24,23 @@ const AddProducts = () => {
             };
 
             console.log(formData);
+            fetch('http://localhost:7001/products', {
+                  method: 'POST',
+                  headers: {
+                        "Content-Type": "application/json"
+                  },
+                  body: JSON.stringify(formData)
+            })
+                  .then(res => res.json())
+                  .then(data => {
+                        if (data.insertedId) {
+                              Swal.fire(
+                                    'Good job!',
+                                    'You clicked the button!',
+                                    'success'
+                              )
+                        }
+                  })
 
       }
 
