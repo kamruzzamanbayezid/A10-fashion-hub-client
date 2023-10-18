@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 
 const Menubar = () => {
       const [menu, setMenu] = useState(false)
-      console.log(menu);
 
       const handleMenu = () => {
             setMenu(!menu)
