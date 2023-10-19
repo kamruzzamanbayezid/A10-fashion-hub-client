@@ -1,6 +1,22 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContent } from "../../Provider/AuthProvider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
+
+      const { user, logOut } = useContext(AuthContent);
+
+      const handleLOgOut = () => {
+            logOut()
+                  .then(() => {
+                        toast.success('SUccessfully Logged Out')
+                  })
+                  .catch(error => {
+                        toast.error(error.message)
+                  })
+      }
+
       return (
             <div className="">
                   <div className="bg-[#252525]">
@@ -17,15 +33,24 @@ const Navbar = () => {
 
                                     <NavLink className={({ isActive }) => isActive ? 'bg-[#E7AB3C]' : ''} to='/myCart' ><li className="py-4 px-8  border border-[#4C4C4C] h-full">My Cart</li></NavLink>
 
-                                    <NavLink className={({ isActive }) => isActive ? 'bg-[#E7AB3C]' : ''} to='/register' ><li className="py-4 px-8  border border-[#4C4C4C] h-full">Register</li></NavLink>
+                                    {
+                                          !user && <NavLink className={({ isActive }) => isActive ? 'bg-[#E7AB3C]' : ''} to='/register' ><li className="py-4 px-8  border border-[#4C4C4C] h-full">Register</li></NavLink>
+                                    }
 
-                                    <NavLink className={({ isActive }) => isActive ? 'bg-[#E7AB3C]' : ''} to='/login' ><li className="py-4 px-8  border border-[#4C4C4C] h-full">Login</li></NavLink>
+                                    {
+                                          user ?
+                                                <li onClick={handleLOgOut} className="py-4 px-8 cursor-pointer  border border-[#4C4C4C] h-full">Log out</li>
+                                                :
+                                                < NavLink className={({ isActive }) => isActive ? 'bg-[#E7AB3C]' : ''} to='/login' ><li className="py-4 px-8  border border-[#4C4C4C] h-full">Login</li></NavLink>
+
+
+                                    }
                               </ul>
                         </div>
 
                   </div>
-                 
-            </div>
+
+            </div >
       );
 };
 
