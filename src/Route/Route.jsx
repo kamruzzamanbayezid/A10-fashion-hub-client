@@ -12,11 +12,13 @@ import HM from "../Pages/HM/HM";
 import Levis from "../Pages/Levis/Levis";
 import ProductsDetails from "../Pages/ProductsDetails/ProductsDetails";
 import UpdateProduct from "../Pages/UpdateProduct/UpdateProduct";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
       {
             path: '/',
             element: <Root></Root>,
+            errorElement: <ErrorPage></ErrorPage>,
             children: [
                   {
                         path: '/',
