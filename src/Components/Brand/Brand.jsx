@@ -22,7 +22,7 @@ const Brand = () => {
                                     </figure>
                                     <div className="card-body">
                                           <Link to={`/${brand.brandName}`}>
-                                                <h2 className="text-2xl font-extrabold text-center text-[#E7AB3C]">{brand.brandName}</h2>
+                                                <h2 className="text-2xl underline hover:no-underline font-extrabold text-center text-[#E7AB3C]">{brand.brandName}</h2>
                                           </Link>
                                     </div>
                               </div>

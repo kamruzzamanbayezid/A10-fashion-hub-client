@@ -29,7 +29,7 @@ const Nike = () => {
                                     <a href="#slide1" className="btn btn-circle">❯</a>
                               </div>
                         </div>
-                       
+
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10 max-w-7xl mx-auto">
                         {
@@ -61,7 +61,9 @@ const Nike = () => {
                                                       <Link to={`/productsDetails/${product._id}`}>
                                                             <button className="cursor-pointer mt-5 hover:bg-white text-black py-2 px-8 font-medium hover:border-2 hover:border-[#E7AB3C] hover:text-[#E7AB3C] bg-[#E7AB3C]  text-xl">Details</button>
                                                       </Link>
-                                                      <button className="cursor-pointer mt-5 hover:bg-white text-black py-2 px-8 font-medium hover:border-2 hover:border-[#E7AB3C] hover:text-[#a5a29c] bg-[#E7AB3C]  text-xl">Update</button>
+                                                      <Link to={`/productsUpdate/${product._id}`}>
+                                                            <button className="cursor-pointer mt-5 hover:bg-white text-black py-2 px-8 font-medium hover:border-2 hover:border-[#E7AB3C] hover:text-[#E7AB3C] bg-[#E7AB3C]  text-xl">Update</button>
+                                                      </Link>
 
                                                 </div>
 
