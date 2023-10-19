@@ -5,7 +5,7 @@ import AddProducts from "../Pages/AddProducts/AddProducts";
 import MyCart from "../Pages/MyCart/MyCart";
 import Login from "../Pages/Login/Login";
 import Nike from "../Pages/Nike/Nike";
-import Addidas from "../Pages/Addidas/Addidas";
+import Adidas from "../Pages/Addidas/Adidas";
 
 const router = createBrowserRouter([
       {
@@ -35,7 +35,8 @@ const router = createBrowserRouter([
                   },
                   {
                         path: '/Adidas',
-                        element: <Addidas></Addidas>
+                        element: <Adidas></Adidas>,
+                        loader: () => fetch('http://localhost:7001/products/Adidas')
                   }
             ]
       }

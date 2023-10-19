@@ -1,7 +1,7 @@
 import Rating from "react-rating";
 import { useLoaderData } from "react-router-dom";
 
-const Nike = () => {
+const Adidas = () => {
 
       const loadedProducts = useLoaderData();
 
@@ -35,7 +35,7 @@ const Nike = () => {
                                           <div className="flex items-center justify-between mt-4">
                                                 <button className="cursor-pointer mt-5 hover:bg-white text-black py-2 px-8 font-medium hover:border-2 hover:border-[#E7AB3C] hover:text-[#E7AB3C] bg-[#E7AB3C]  text-xl">Details</button>
                                                 <button className="cursor-pointer mt-5 hover:bg-white text-black py-2 px-8 font-medium hover:border-2 hover:border-[#E7AB3C] hover:text-[#E7AB3C] bg-[#E7AB3C]  text-xl">Update</button>
-                                                
+
                                           </div>
 
                                     </div>
@@ -47,4 +47,4 @@ const Nike = () => {
       );
 };
 
-export default Nike;
+export default Adidas;
