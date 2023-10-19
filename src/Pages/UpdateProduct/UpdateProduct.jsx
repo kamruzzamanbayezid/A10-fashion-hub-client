@@ -1,17 +1,18 @@
 import { useState } from "react";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const AddProducts = () => {
+const UpdateProduct = () => {
+      const loadedProduct = useLoaderData();
 
-      const [name, setName] = useState('');
-      const [brand, setBrand] = useState('');
-      const [image, setImage] = useState('');
-      const [type, setType] = useState('');
-      const [price, setPrice] = useState('');
-      const [rating, setRating] = useState(0);
-      const [description, setDescription] = useState('')
+      const [name, setName] = useState(loadedProduct.name);
+      const [brand, setBrand] = useState(loadedProduct.brand);
+      const [image, setImage] = useState(loadedProduct.image);
+      const [type, setType] = useState(loadedProduct.type);
+      const [price, setPrice] = useState(loadedProduct.price);
+      const [rating, setRating] = useState(loadedProduct.rating);
 
-      const handleAddProducts = e => {
+      const handleUpdateProducts = e => {
             e.preventDefault();
             const formData = {
                   image,
@@ -20,12 +21,11 @@ const AddProducts = () => {
                   type,
                   price,
                   rating,
-                  description,
             };
 
             console.log(formData);
             fetch('http://localhost:7001/products', {
-                  method: 'POST',
+                  method: 'PUT',
                   headers: {
                         "Content-Type": "application/json"
                   },
@@ -36,7 +36,7 @@ const AddProducts = () => {
                         if (data.insertedId) {
                               Swal.fire(
                                     'Good job!',
-                                    'Product Added Successfully!',
+                                    'User Updated Successfully!',
                                     'success'
                               )
                         }
@@ -46,8 +46,8 @@ const AddProducts = () => {
 
       return (
             <div className="max-w-7xl mx-auto my-20">
-                  <h1 className="text-center text-3xl mb-5 underline text-[#E7AB3C] font-semibold">Add New Product</h1>
-                  <form onSubmit={handleAddProducts} className="lg:w-4/5 mx-auto">
+                  <h1 className="text-center text-3xl mb-5 underline text-[#E7AB3C] font-semibold">Update Product</h1>
+                  <form onSubmit={handleUpdateProducts} className="lg:w-4/5 mx-auto">
                         <div className="grid gap-6 mb-6 md:grid-cols-2">
                               <div>
                                     <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Products Name</label>
@@ -73,29 +73,23 @@ const AddProducts = () => {
                                           value={price}
                                           onChange={(e) => setPrice(e.target.value)} id="phone" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Price" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
                               </div>
-                              <div>
-                                    <label htmlFor="website" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rating</label>
-                                    <input onChange={(e) => setRating(parseInt(e.target.value))} type="number" name='rating' value={rating} min="1" max="5" id="website" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Rating (1-5)" required />
-                              </div>
-                              <div>
-                                    <label htmlFor="visitors" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Photo URL</label>
-                                    <input name="image"
-                                          value={image}
-                                          onChange={(e) => setImage(e.target.value)} type="photo_URL" id="visitors" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Photo URL" required />
-                              </div>
                         </div>
                         <div className="mb-6">
-                              <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sort Description</label>
-                              <textarea name="description"
-                                    value={description}
-                                    onChange={(e) => setDescription(e.target.value)} rows="3" type="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Short Description" required />
+                              <label htmlFor="website" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rating</label>
+                              <input onChange={(e) => setRating(parseInt(e.target.value))} type="number" name='rating' value={rating} min="1" max="5" id="website" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Rating (1-5)" required />
+                        </div>
+                        <div className="mb-8">
+                              <label htmlFor="visitors" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Photo URL</label>
+                              <input name="image"
+                                    value={image}
+                                    onChange={(e) => setImage(e.target.value)} type="photo_URL" id="visitors" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Photo URL" required />
                         </div>
 
-                        <button type="submit" className="text-white hover:bg-transparent hover:border hover:border-[#E7AB3C] bg-[#E7AB3C] hover:text-[#E7AB3C] focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg w-full  px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add Products</button>
+                        <button type="submit" className="text-white hover:bg-transparent hover:border hover:border-[#E7AB3C] bg-[#E7AB3C] hover:text-[#E7AB3C] focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg w-full  px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Update</button>
                   </form>
 
             </div>
       );
 };
 
-export default AddProducts;
+export default UpdateProduct;

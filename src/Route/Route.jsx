@@ -11,6 +11,7 @@ import Zara from "../Pages/Zara/Zara";
 import HM from "../Pages/HM/HM";
 import Levis from "../Pages/Levis/Levis";
 import ProductsDetails from "../Pages/ProductsDetails/ProductsDetails";
+import UpdateProduct from "../Pages/UpdateProduct/UpdateProduct";
 
 const router = createBrowserRouter([
       {
@@ -66,6 +67,11 @@ const router = createBrowserRouter([
                   {
                         path: '/productsDetails/:id',
                         element: <ProductsDetails></ProductsDetails>,
+                        loader: ({ params }) => fetch(`http://localhost:7001/productSingle/${params.id}`)
+                  },
+                  {
+                        path: '/productsUpdate/:id',
+                        element: <UpdateProduct></UpdateProduct>,
                         loader: ({ params }) => fetch(`http://localhost:7001/productSingle/${params.id}`)
                   }
             ]
