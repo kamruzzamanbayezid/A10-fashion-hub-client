@@ -1,5 +1,9 @@
 [
       {
+            "brandName": "HM",
+            "image": "https://i.ibb.co/F8Byg6r/h-m.png"
+      },
+      {
             "brandName": "Nike",
             "image": "https://i.ibb.co/8M42Cg9/Nike.jpg"
       },
@@ -14,10 +18,6 @@
       {
             "brandName": "Zara",
             "image": "https://i.ibb.co/kK0BRRh/zara.webp"
-      },
-      {
-            "brandName": "HM",
-            "image": "https://i.ibb.co/F8Byg6r/h-m.png"
       },
       {
             "brandName": "Levis",
