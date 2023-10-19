@@ -13,6 +13,7 @@ import Levis from "../Pages/Levis/Levis";
 import ProductsDetails from "../Pages/ProductsDetails/ProductsDetails";
 import UpdateProduct from "../Pages/UpdateProduct/UpdateProduct";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import Register from "../Pages/Register/Register";
 
 const router = createBrowserRouter([
       {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
                   {
                         path: '/login',
                         element: <Login></Login>
+                  },
+                  {
+                        path: '/register',
+                        element: <Register></Register>
                   },
                   {
                         path: '/nike',
