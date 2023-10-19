@@ -10,7 +10,7 @@ const Navbar = () => {
                                     <h2 className="text-[#FFF] text-2xl mt-[7px]">Hub</h2>
                               </div>
 
-                              <ul className="text-[#FFF] font-medium hidden md:flex">
+                              <ul className="text-[#FFF] font-medium hidden lg:flex">
                                     <NavLink className={({ isActive }) => isActive ? 'bg-[#E7AB3C]' : ''} to='/' ><li className="py-4 px-8  h-full border border-[#4C4C4C]">HOME</li></NavLink>
 
                                     <NavLink className={({ isActive }) => isActive ? 'bg-[#E7AB3C]' : ''} to='/addProducts' ><li className="py-4 px-8  border border-[#4C4C4C] h-full">Add Products</li></NavLink>
