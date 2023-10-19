@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { useContext } from "react";
 import { AuthContent } from "../../Provider/AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 
 const Login = () => {
+      const location = useLocation();
+      console.log(location);
+      const navigate = useNavigate();
 
       const { logIn } = useContext(AuthContent);
 
@@ -33,6 +36,8 @@ const Login = () => {
                   .then(result => {
                         toast.success('Successfully Logged in');
                         form.reset()
+                        navigate(location.state ? location.state : '/')
+
                   })
                   .catch(error => {
                         toast.error(error.message)
