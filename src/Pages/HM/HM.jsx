@@ -1,5 +1,5 @@
 import Rating from "react-rating";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const HM = () => {
 
@@ -33,7 +33,9 @@ const HM = () => {
                                                 <span className="text-3xl font-bold text-gray-900 dark:text-white">${product.price}</span>
                                           </div>
                                           <div className="flex items-center justify-between mt-4">
-                                                <button className="cursor-pointer mt-5 hover:bg-white text-black py-2 px-8 font-medium hover:border-2 hover:border-[#E7AB3C] hover:text-[#E7AB3C] bg-[#E7AB3C]  text-xl">Details</button>
+                                                <Link to={`/productsDetails/${product._id}`}>
+                                                      <button className="cursor-pointer mt-5 hover:bg-white text-black py-2 px-8 font-medium hover:border-2 hover:border-[#E7AB3C] hover:text-[#E7AB3C] bg-[#E7AB3C]  text-xl">Details</button>
+                                                </Link>
                                                 <button className="cursor-pointer mt-5 hover:bg-white text-black py-2 px-8 font-medium hover:border-2 hover:border-[#E7AB3C] hover:text-[#E7AB3C] bg-[#E7AB3C]  text-xl">Update</button>
 
                                           </div>
