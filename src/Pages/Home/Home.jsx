@@ -5,7 +5,7 @@ import Services from "../../Components/Services/Services";
 
 const Home = () => {
       return (
-            <div>
+            <div className="dark">
                   <Banner />
                   {/* Brand names */}
                   <h2 className="text-center text-4xl font-semibold   mt-10 md:mt-20">Shop for Different Categories</h2>

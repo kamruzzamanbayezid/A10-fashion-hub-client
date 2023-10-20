@@ -24,7 +24,7 @@ const AddProducts = () => {
             };
 
             console.log(formData);
-            fetch('http://localhost:7001/products', {
+            fetch('https://fashion-hub-server-4fsj1avdf-kamruzzaman-bayezids-projects.vercel.app/products', {
                   method: 'POST',
                   headers: {
                         "Content-Type": "application/json"

@@ -13,18 +13,12 @@ const Banner = () => {
                                           />
                                     </div>
                                     <div className="w-full lg:mt-7 lg:w-1/2">
-                                          <div data-aos="fade-right"
-                                                data-aos-easing="linear"
-                                                data-aos-duration="500">
-                                                <span className="text-xl text-[#FFF] mr-2">Flat</span>
+                                          <div>
+                                                <span className="text-xl dark:text-red-600 text-[#FFF] mr-2">Flat</span>
                                                 <span className="text-4xl text-white font-semibold">50%Off</span>
                                           </div>
-                                          <h2 data-aos="fade-left"
-                                                data-aos-easing="linear"
-                                                data-aos-duration="1000" className="text-3xl md:text-5xl lg:text-6xl text-white my-5 font-bold mb-4">IT’S HAPPENING THIS SEASON!</h2>
-                                          <button data-aos="flip-left"
-                                                data-aos-easing="linear"
-                                                data-aos-duration="2000" className="cursor-pointer mt-5 bg-white text-black py-2 px-8 font-medium hover:border-2 hover:border-white hover:text-white hover:bg-[#E7AB3C] rounded-full text-xl">Purchase Now</button>
+                                          <h2 className="text-3xl md:text-5xl lg:text-6xl text-white my-5 font-bold mb-4">IT’S HAPPENING THIS SEASON!</h2>
+                                          <button className="cursor-pointer mt-5 bg-white text-black py-2 px-8 font-medium hover:border-2 hover:border-white hover:text-white hover:bg-[#E7AB3C] rounded-full text-xl">Purchase Now</button>
                                     </div>
                               </div>
                         </div>
