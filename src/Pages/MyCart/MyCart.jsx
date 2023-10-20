@@ -1,10 +1,16 @@
-import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import { AuthContent } from "../../Provider/AuthProvider/AuthProvider";
 
 const MyCart = () => {
-      const loadedCarts = useLoaderData();
-      const [carts, setCarts] = useState(loadedCarts)
+      const [carts, setCarts] = useState([])
+      const { user } = useContext(AuthContent);
+
+      useEffect(() => {
+            fetch(`http://localhost:7001/addToCart/${user.email}`)
+                  .then(res => res.json())
+                  .then(data => setCarts(data))
+      }, [user.email])
 
       const handleRemove = (_id) => {
 
