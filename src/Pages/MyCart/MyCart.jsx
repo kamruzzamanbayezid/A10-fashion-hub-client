@@ -1,55 +1,66 @@
+import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MyCart = () => {
       const loadedCarts = useLoaderData();
+      const [carts, setCarts] = useState(loadedCarts)
 
-      return (
-            <div className="bg-slate-100 py-10">
-                  <div className="overflow-x-auto max-w-7xl mx-auto">
-                        <table className="table">
-                              {/* head */}
-                              <thead>
-                                    <tr>
+      const handleRemove = (_id) => {
 
-                                          <th>Products Photo</th>
-                                          <th>Names</th>
-                                          <th>prices</th>
-                                          <th></th>
-                                    </tr>
-                              </thead>
-                              <tbody>
-                                    {/* row 1 */}
-                                    {
-                                          loadedCarts?.map(cart => <tr key={cart._id} className="">
-
-                                                <td className="border-t border-b">
-                                                      <div className="">
-                                                            <div className="">
-                                                                  <div className=" w-36 h-auto">
-                                                                        <img src={cart.image} alt="Avatar Tailwind CSS Component" />
-                                                                  </div>
-                                                            </div>
-                                                      </div>
-                                                </td>
-                                                <td className="border-t border-b">
-                                                      Zemlak, Daniel and Leannon
-                                                      <br />
-                                                      <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
-                                                </td>
-                                                <td className="border-t border-b">Purple</td>
-                                                <th className="border-t border-b">
-                                                      <button className="btn btn-ghost btn-xs">details</button>
-                                                </th>
-                                          </tr>)
+            Swal.fire({
+                  title: 'Are you sure?',
+                  text: "You won't be able to revert this!",
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33',
+                  confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                  if (result.isConfirmed) {
+                        fetch(`http://localhost:7001/addToCartSingle/${_id}`, {
+                              method: "DELETE"
+                        })
+                              .then(res => res.json())
+                              .then(data => {
+                                    if (data.deletedCount > 0) {
+                                          Swal.fire(
+                                                'Deleted!',
+                                                'Your file has been deleted.',
+                                                'success'
+                                          )
                                     }
+                                    const remaining = carts.filter(cart => cart._id !== _id)
+                                    setCarts(remaining)
 
+                              })
+                  }
+            }
+            )
 
-                              </tbody>
+      }
+      return (
+            <div className="flex items-center justify-center">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-10">
+                        {
+                              carts?.map(cart =>
+                                    <div key={cart._id} className="max-w-lg bg-white rounded-t-lg dark:bg-gray-800 ">
 
+                                          <img className="rounded-t-lg h-80 w-full" src={cart.image} alt="" />
 
-                        </table>
+                                          <div className="p-5">
+                                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-600 dark:text-white">{cart.name}</h5>
+                                                <div className="flex items-center justify-between">
+                                                      <span className="text-3xl font-bold text-gray-900 dark:text-white">${cart.price}</span>
+                                                      <span className="text-lg font-bold text-white bg-black px-4 rounded ">{cart.brand}</span>
+                                                </div>
+                                          </div>
+                                          <button onClick={() => handleRemove(cart._id)} className="cursor-pointer mt-5 hover:bg-white text-black py-2 px-8 font-medium hover:border-2 hover:border-[#E7AB3C] hover:text-[#E7AB3C] bg-[#E7AB3C]  text-xl">Remove</button>
+                                    </div>
+                              )
+                        }
                   </div>
-            </div>
+            </div >
       );
 };
 
