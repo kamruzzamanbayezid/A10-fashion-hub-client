@@ -7,7 +7,7 @@ const MyCart = () => {
       const { user } = useContext(AuthContent);
 
       useEffect(() => {
-            fetch(`https://fashion-hub-server-4fsj1avdf-kamruzzaman-bayezids-projects.vercel.app/addToCart/${user.email}`)
+            fetch(`https://fashion-hub-server.vercel.app/addToCart/${user.email}`)
                   .then(res => res.json())
                   .then(data => setCarts(data))
       }, [user.email])
@@ -24,7 +24,7 @@ const MyCart = () => {
                   confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                   if (result.isConfirmed) {
-                        fetch(`https://fashion-hub-server-4fsj1avdf-kamruzzaman-bayezids-projects.vercel.app/addToCartSingle/${_id}`, {
+                        fetch(`https://fashion-hub-server.vercel.app/addToCartSingle/${_id}`, {
                               method: "DELETE"
                         })
                               .then(res => res.json())

@@ -23,7 +23,7 @@ const UpdateProduct = () => {
                   rating,
             };
 
-            fetch(`https://fashion-hub-server-4fsj1avdf-kamruzzaman-bayezids-projects.vercel.app/products/${loadedProduct._id}`, {
+            fetch(`https://fashion-hub-server.vercel.app/products/${loadedProduct._id}`, {
                   method: 'PUT',
                   headers: {
                         "Content-Type": "application/json"

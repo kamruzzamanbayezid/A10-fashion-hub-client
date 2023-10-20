@@ -45,42 +45,42 @@ const router = createBrowserRouter([
                   {
                         path: '/nike',
                         element: <Nike></Nike>,
-                        loader: () => fetch('https://fashion-hub-server-4fsj1avdf-kamruzzaman-bayezids-projects.vercel.app/products/Nike')
+                        loader: () => fetch('https://fashion-hub-server.vercel.app/products/Nike')
                   },
                   {
                         path: '/Adidas',
                         element: <Adidas></Adidas>,
-                        loader: () => fetch('https://fashion-hub-server-4fsj1avdf-kamruzzaman-bayezids-projects.vercel.app/products/Adidas')
+                        loader: () => fetch('https://fashion-hub-server.vercel.app/products/Adidas')
                   },
                   {
                         path: '/Gucci',
                         element: <Gucci></Gucci>,
-                        loader: () => fetch('https://fashion-hub-server-4fsj1avdf-kamruzzaman-bayezids-projects.vercel.app/products/Gucci')
+                        loader: () => fetch('https://fashion-hub-server.vercel.app/products/Gucci')
                   },
                   {
                         path: '/Zara',
                         element: <Zara></Zara>,
-                        loader: () => fetch('https://fashion-hub-server-4fsj1avdf-kamruzzaman-bayezids-projects.vercel.app/products/Zara')
+                        loader: () => fetch('https://fashion-hub-server.vercel.app/products/Zara')
                   },
                   {
                         path: '/HM',
                         element: <HM></HM>,
-                        loader: () => fetch('https://fashion-hub-server-4fsj1avdf-kamruzzaman-bayezids-projects.vercel.app/products/HM')
+                        loader: () => fetch('https://fashion-hub-server.vercel.app/products/HM')
                   },
                   {
                         path: '/Levis',
                         element: <Levis></Levis>,
-                        loader: () => fetch('https://fashion-hub-server-4fsj1avdf-kamruzzaman-bayezids-projects.vercel.app/products/Levis')
+                        loader: () => fetch('https://fashion-hub-server.vercel.app/products/Levis')
                   },
                   {
                         path: '/productsDetails/:id',
                         element: <PrivateRoute><ProductsDetails></ProductsDetails></PrivateRoute>,
-                        loader: ({ params }) => fetch(`https://fashion-hub-server-4fsj1avdf-kamruzzaman-bayezids-projects.vercel.app/productSingle/${params.id}`)
+                        loader: ({ params }) => fetch(`https://fashion-hub-server.vercel.app/productSingle/${params.id}`)
                   },
                   {
                         path: '/productsUpdate/:id',
                         element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-                        loader: ({ params }) => fetch(`https://fashion-hub-server-4fsj1avdf-kamruzzaman-bayezids-projects.vercel.app/productSingle/${params.id}`)
+                        loader: ({ params }) => fetch(`https://fashion-hub-server.vercel.app/productSingle/${params.id}`)
                   }
             ]
       }

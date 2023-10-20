@@ -2,7 +2,7 @@
 
 Welcome to the Fashion and Apparel website, your one-stop destination for all your fashion needs. Whether you're looking for clothing, accessories, or the latest trends, we've got you covered!
 
-👉 [Live Website](https://your-fashion-website.com)
+👉 [Live Website](https://fashion-hub-fc527.web.app/)
 
 ## Introduction
 
@@ -22,7 +22,7 @@ Welcome to the Fashion and Apparel website, your one-stop destination for all yo
 ## Getting Started
 To access certain features like adding products or managing your cart, you need to create an account or log in. Here's how to get started:
 
-1. Visit our [Live Website](https://your-fashion-website.com).
+1. Visit our [Live Website](https://fashion-hub-fc527.web.app/).
 2. Click on "Sign Up" to create a new account or "Log In" if you're an existing user.
 3. Browse products, add to your cart, and enjoy shopping!
 
@@ -35,4 +35,4 @@ If you have any inquiries, need assistance, or want to provide feedback, we're h
 ## Contributing
 We welcome contributions from the community to help make our website even better. If you have ideas, bug fixes, or want to contribute to our codebase, please follow our [Contribution Guidelines](CONTRIBUTING.md).
 
-🛍️ [Explore Our Collection](https://your-fashion-website.com)
+🛍️ [Explore Our Collection](https://fashion-hub-fc527.web.app/)
