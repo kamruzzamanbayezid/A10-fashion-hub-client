@@ -36,6 +36,7 @@ const Login = () => {
                         toast.success('Successfully Logged in');
                         form.reset()
                         navigate(location.state ? location.state : '/')
+                        window.location.reload();
 
                   })
                   .catch(error => {

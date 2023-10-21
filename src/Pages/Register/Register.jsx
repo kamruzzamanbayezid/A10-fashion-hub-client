@@ -39,6 +39,7 @@ const Register = () => {
                               .then(() => {
                                     toast.success('User Created Successfully');
                                     form.reset()
+                                    window.location.reload();
                               })
                               .catch(error => {
                                     toast.error(error.message)

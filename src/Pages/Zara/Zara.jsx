@@ -1,9 +1,11 @@
 import { Rating } from "@material-tailwind/react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useLocation } from "react-router-dom";
 
 const Zara = () => {
 
       const loadedProducts = useLoaderData();
+      const location = useLocation()
+      console.log(location);
 
       return (
             <div>
