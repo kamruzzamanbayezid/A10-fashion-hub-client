@@ -55,7 +55,6 @@ const router = createBrowserRouter([
                   {
                         path: '/Gucci',
                         element: <Gucci></Gucci>,
-                        loader: () => fetch('https://fashion-hub-server.vercel.app/products/Gucci')
                   },
                   {
                         path: '/Zara',

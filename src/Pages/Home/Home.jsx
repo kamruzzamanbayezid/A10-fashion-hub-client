@@ -14,6 +14,15 @@ const Home = () => {
                   <Brand />
                   <Services></Services>
                   <Testimonial></Testimonial>
+                  <h1 className=" text-center font-semibold text-5xl mb-2">Contact Us!</h1>
+                  <p className="text-sm text-center text-gray-500">Need to get in touch with us? Fill out the form with your inquiry</p>
+                  <div>
+                        <div>
+                              <div>
+                                    <span></span>
+                              </div>
+                        </div>
+                  </div>
                   <ContactUs></ContactUs>
             </div>
       );

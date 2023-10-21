@@ -1,5 +1,6 @@
-import Rating from "react-rating";
 import { Link, useLoaderData } from "react-router-dom";
+import { Rating } from "@material-tailwind/react";
+
 
 const HM = () => {
 
@@ -49,10 +50,8 @@ const HM = () => {
 
                                                 <div className="flex justify-between">
                                                       <div className="flex items-center">
-                                                            <Rating
-                                                                  initialRating={product.rating}
-                                                                  readonly
-                                                            />
+                                                            <Rating value={product.rating} />
+                                                            
                                                             <span className="text-xl text-[#E7AB3C] font-bold">({product.rating})</span>
                                                       </div>
                                                       <span className="text-3xl font-bold text-gray-900 dark:text-white">${product.price}</span>
