@@ -45,27 +45,41 @@ const MyCart = () => {
             )
 
       }
+
+      console.log(carts);
       return (
             <div className="flex items-center justify-center">
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-10">
-                        {
-                              carts?.map(cart =>
-                                    <div key={cart._id} className="max-w-lg bg-white rounded-t-lg dark:bg-gray-800 ">
 
-                                          <img className="rounded-t-lg h-80 w-full" src={cart.image} alt="" />
+                  {
+                        carts.length > 0 ? <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-10">
+                              {
+                                    carts?.map(cart =>
+                                          <div key={cart._id} className="max-w-lg bg-white rounded-t-lg dark:bg-gray-800 ">
 
-                                          <div className="p-5">
-                                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-600 dark:text-white">{cart.name}</h5>
-                                                <div className="flex items-center justify-between">
-                                                      <span className="text-3xl font-bold text-gray-900 dark:text-white">${cart.price}</span>
-                                                      <span className="text-lg font-bold text-white bg-black px-4 rounded ">{cart.brand}</span>
+                                                <img className="rounded-t-lg h-80 w-full" src={cart.image} alt="" />
+
+                                                <div className="p-5">
+                                                      <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-600 dark:text-white">{cart.name}</h5>
+                                                      <div className="flex items-center justify-between">
+                                                            <span className="text-3xl font-bold text-gray-900 dark:text-white">${cart.price}</span>
+                                                            <span className="text-lg font-bold text-white bg-black px-4 rounded ">{cart.brand}</span>
+                                                      </div>
                                                 </div>
+                                                <button onClick={() => handleRemove(cart._id)} className="cursor-pointer mt-5 hover:bg-white text-black py-2 px-8 font-medium hover:border-2 hover:border-[#E7AB3C] hover:text-[#E7AB3C] bg-[#E7AB3C]  text-xl">Remove</button>
                                           </div>
-                                          <button onClick={() => handleRemove(cart._id)} className="cursor-pointer mt-5 hover:bg-white text-black py-2 px-8 font-medium hover:border-2 hover:border-[#E7AB3C] hover:text-[#E7AB3C] bg-[#E7AB3C]  text-xl">Remove</button>
+                                    )
+                              }
+                        </div>
+                              :
+                              <div className="my-16">
+                                    <div>
+                                          <h4 className="mt-7 text-center text-3xl font-semibold text-gray-800">No Items in Cart</h4>
+                                          <p className="text-center text-gray-500">You haven't added any products yet.</p>
+                                          <p className="text-center text-gray-500">Feel free to explore our collection and find something you like.</p>
                                     </div>
-                              )
-                        }
-                  </div>
+                              </div>
+                  }
+
             </div >
       );
 };
