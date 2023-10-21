@@ -11,6 +11,16 @@ const AddProducts = () => {
       const [rating, setRating] = useState(0);
       const [description, setDescription] = useState('')
 
+      const resetForm = () => {
+            setName('');
+            setBrand('');
+            setImage('');
+            setType('');
+            setPrice('');
+            setRating(0);
+            setDescription('');
+      };
+
       const handleAddProducts = e => {
             e.preventDefault();
             const formData = {
@@ -39,7 +49,8 @@ const AddProducts = () => {
                                     'Product Added Successfully!',
                                     'success'
                               )
-                              
+                              resetForm();
+
                         }
                   })
 
