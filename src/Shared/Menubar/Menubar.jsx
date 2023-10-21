@@ -34,7 +34,7 @@ const Menubar = () => {
                               }
 
                         </div>
-                        <ul className={`${menu ? 'flex flex-col' : 'hidden'} text-[#FFF] font-medium`}>
+                        <ul className={`${menu ? 'flex flex-col' : 'hidden'} text-[#FFF] mt-4 font-medium`}>
                               <NavLink className={({ isActive }) => isActive ? 'rounded-md bg-[#CCCCCC]' : ''} to='/' ><li className="py-3 px-8 text-sm h-full ">HOME</li></NavLink>
                               <NavLink className={({ isActive }) => isActive ? 'rounded-md bg-[#CCCCCC]' : ''} to='/addProducts' ><li className="py-3 px-8 text-sm h-full">Add Products</li></NavLink>
                               <NavLink className={({ isActive }) => isActive ? 'rounded-md bg-[#CCCCCC]' : ''} to='/myCart' ><li className="py-3 px-8 text-sm h-full">My Cart</li></NavLink>
