@@ -48,7 +48,7 @@ const AddProducts = () => {
       return (
             <div className="max-w-7xl mx-auto my-20">
                   <h1 className="text-center text-3xl mb-5 underline text-[#E7AB3C] font-semibold">Add New Product</h1>
-                  <form onSubmit={handleAddProducts} className="lg:w-4/5 mx-auto">
+                  <form onSubmit={handleAddProducts} className="lg:w-4/5 p-4 mx-auto">
                         <div className="grid gap-6 mb-6 md:grid-cols-2">
                               <div>
                                     <label htmlFor="first_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Products Name</label>
