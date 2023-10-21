@@ -21,9 +21,12 @@ const Navbar = () => {
             <div className="">
                   <div className="bg-[#252525]">
                         <div className="flex justify-between items-center max-w-7xl mx-auto">
-                              <div className="flex">
-                                    <h2 className="text-[#FFF] text-4xl font-semibold">FASHION<span className="text-[#E7AB3C] font-black">.</span></h2>
-                                    <h2 className="text-[#FFF] text-2xl mt-[7px]">Hub</h2>
+                              <div className="flex items-center">
+                                    
+                                    <div className="flex">
+                                          <h2 className="text-[#FFF] text-4xl font-semibold">FASHION<span className="text-[#E7AB3C] font-black">.</span></h2>
+                                          <h2 className="text-[#FFF] text-2xl mt-[7px]">Hub</h2>
+                                    </div>
                               </div>
 
                               <ul className="text-[#FFF] font-medium hidden lg:flex">
