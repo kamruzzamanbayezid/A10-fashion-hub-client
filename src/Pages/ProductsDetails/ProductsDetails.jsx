@@ -45,7 +45,7 @@ const ProductsDetails = () => {
       }
 
       return (
-            <div className="bg-slate-100">
+            <div className="bg-zinc-50">
                   <div className="max-w-7xl mx-auto pb-10 lg:pt-10">
                         <div className="flex flex-col lg:flex-row lg:h-[80vh] w-11/12 mx-auto gap-6">
                               <figure className="lg:w-2/5 flex items-center">

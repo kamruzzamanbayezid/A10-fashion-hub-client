@@ -1,0 +1,7 @@
+.card-parents:hover .card-child {
+      top: 0;
+}
+
+.card-child {
+      transition: 1s;
+}

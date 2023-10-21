@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import './Brand.css'
 
 const Brand = () => {
 
@@ -13,16 +14,16 @@ const Brand = () => {
       }, []);
 
       return (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-10 lg:mb-20 gap-6 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-10 lg:mb-20 max-w-7xl mx-auto">
                   {
-                        brands.map((brand, index) =>
-                              <div key={index} className="card card-compact bg-base-100 shadow-xl">
-                                    <figure className="h-96">
+                        brands && brands.map((brand, index) =>
+                              <div key={index} className=" flex items-center justify-center card-parents overflow-hidden cursor-pointer  bg-base-100 relative">
+                                    <figure>
                                           <img src={brand.image} alt="brand image" />
                                     </figure>
-                                    <div className="card-body">
+                                    <div className="card-child card-body absolute top-full left-0 w-full h-full flex justify-end  bg-opacity-50 bg-[#E7AB3C]">
                                           <Link to={`/${brand.brandName}`}>
-                                                <h2 className="text-2xl underline hover:no-underline font-extrabold text-center text-[#E7AB3C]">{brand.brandName}</h2>
+                                                <h2 className="text-lg w-fit px-4 py-1 rounded-md underline hover:no-underline bg-white font-medium text-[#000]">Shop now</h2>
                                           </Link>
                                     </div>
                               </div>
